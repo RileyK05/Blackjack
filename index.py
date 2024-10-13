@@ -46,22 +46,46 @@ class Player:
         self.hand.append(card)
         
         
+def print_game_board(player_chips):
+    print("========================================")
+    print("             Welcome to Blackjack       ")
+    print("========================================\n")
+    
+    print("Dealer's Hand:")
+    print("┌─────────┐  ┌─────────┐")
+    print("│░░░░░░░░░│  │░░░░░░░░░│")
+    print("│░ BLACK ░│  │░ JACK  ░│")
+    print("│░░░░░░░░░│  │░░░░░░░░░│")
+    print("└─────────┘  └─────────┘\n")
+    
+    print("Player's Hand:")
+    print("┌─────────┐  ┌─────────┐")
+    print("│         │  │         │")
+    print("│         │  │         │")
+    print("│         │  │         │")
+    print("└─────────┘  └─────────┘\n")
+    
+    print(f"Your Chips: {player_chips}")
+    print("========================================")
+
+
 def main():
     deck = Deck()
     game_state = False
     
     print("To start game, press 1")
     print("To quit game, press 2")
-    usr_start = input("Enter: ")
+    usr_start = int(input("Enter: "))
     
     if usr_start == 1:
         game_state = True
+        player = Player()
+        print_game_board(player.chips)
     else:
-        print("Ended")
+        print("Ended or poor input")
         
     while game_state:
-        
-    
+        usr_chip_bet = int(input("How many chips to bargain: "))
 
 
 

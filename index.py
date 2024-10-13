@@ -36,10 +36,31 @@ class Deck:
         
     def __str__(self):
         return ', '.join([str(card) for card in self.cards])
+    
+class Player:
+    def __init__(self):
+        self.hand = []
+        self.chips = 100
+        
+    def add_card(self, card):
+        self.hand.append(card)
+        
         
 def main():
     deck = Deck()
+    game_state = False
     
+    print("To start game, press 1")
+    print("To quit game, press 2")
+    usr_start = input("Enter: ")
+    
+    if usr_start == 1:
+        game_state = True
+    else:
+        print("Ended")
+        
+    while game_state:
+        
     
 
 
